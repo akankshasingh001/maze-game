@@ -1,12 +1,4 @@
-const {
-  Engine,
-  Render,
-  Runner,
-  World,
-  Bodies,
-  MouseConstraint,
-  Mouse
-} = Matter;
+const { Engine, Render, Runner, World, Bodies } = Matter;
 
 const width = 800;
 const height = 600;
@@ -25,13 +17,6 @@ const render = Render.create({
 Render.run(render);
 Runner.run(Runner.create(), engine);
 
-//clicking and dropping the shape
-World.add(
-  world,
-  MouseConstraint.create(engine, {
-    mouse: Mouse.create(render.canvas)
-  })
-);
 //walls
 const walls = [
   Bodies.rectangle(400, 0, 800, 40, { isStatic: true }),
