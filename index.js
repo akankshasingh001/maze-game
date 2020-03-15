@@ -2,7 +2,7 @@ const { Engine, Render, Runner, World, Bodies } = Matter;
 
 const width = 600;
 const height = 600;
-const cells = 3;
+const cells = 15;
 const unitLength = width / cells;
 
 const engine = Engine.create();
@@ -168,3 +168,29 @@ World.add(world, goal);
 //Creating Ball
 const ball = Bodies.circle(unitLength / 2, unitLength / 2, unitLength / 4);
 World.add(world, ball);
+
+//Handling Keypress
+document.addEventListener('keydown', event => {
+  switch (event.keyCode) {
+    //w or up arrow
+    case 87:
+    case 38:
+      console.log('up');
+      break;
+    //d or right arrow
+    case 68:
+    case 39:
+      console.log('right');
+      break;
+    //s or down arrow
+    case 83:
+    case 40:
+      console.log('down');
+      break;
+    //a or left arrow
+    case 65:
+    case 37:
+      console.log('left');
+      break;
+  }
+});
