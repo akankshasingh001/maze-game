@@ -28,6 +28,15 @@ const walls = [
 World.add(world, walls);
 
 //Maze generation in grid by 2D array
+//Here outer Array is row & inner Array is column
 const grid = Array(3)
+  .fill(null)
+  .map(() => Array(3).fill(false));
+
+const verticals = Array(3)
+  .fill(null)
+  .map(() => Array(2).fill(false));
+
+const horizontals = Array(2)
   .fill(null)
   .map(() => Array(3).fill(false));
