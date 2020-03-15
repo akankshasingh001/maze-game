@@ -89,10 +89,24 @@ const moveThroughCell = (row, column) => {
       continue;
     }
     //If visited that neighbour,continue to next neighbour
-    if (gird[nextRow][nextCloumn]) {
+    if (grid[nextRow][nextCloumn]) {
       continue;
     }
     //Remove a wall from either verticals or horizontals
+    switch (direction) {
+      case 'left':
+        verticals[row][column - 1] = true;
+        break;
+      case 'right':
+        verticals[row][column] = true;
+        break;
+      case 'up':
+        horizontals[row - 1][column] = true;
+        break;
+      case 'down':
+        horizontals[row][column] = true;
+        break;
+    }
   }
   //visit that next cell(means start through moveThroughCell function again)
 };
