@@ -6,6 +6,7 @@ const cells = 15;
 const unitLength = width / cells;
 
 const engine = Engine.create();
+engine.world.gravity.y = 0; // for disable gravity of ball
 const { world } = engine;
 const render = Render.create({
   element: document.body,
