@@ -70,16 +70,30 @@ const moveThroughCell = (row, column) => {
   grid[row][column] = true;
   //Assemble randomly-ordered list of neighbour
   const neighbours = shuffle([
-    [row - 1, column],
-    [row, column + 1],
-    [row + 1, column],
-    [row, column - 1]
+    [row - 1, column, 'up'],
+    [row, column + 1, 'right'],
+    [row + 1, column, 'down'],
+    [row, column - 1, 'left']
   ]);
 
   //for each neighbours...
-  //see if that neighbour is out of bound
-  //If visited that neighbour,continue to next neighbour
-  //Remove a wall from either verticals or horizontals
+  for (let neighbour of neighbours) {
+    const [nextRow, nextCloumn, direction] = neighbour;
+    //see if that neighbour is out of bound
+    if (
+      nextRow < 0 ||
+      nextRow >= cells ||
+      nextCloumn < 0 ||
+      nextCloumn >= cells
+    ) {
+      continue;
+    }
+    //If visited that neighbour,continue to next neighbour
+    if (gird[nextRow][nextCloumn]) {
+      continue;
+    }
+    //Remove a wall from either verticals or horizontals
+  }
   //visit that next cell(means start through moveThroughCell function again)
 };
-moveThroughCell(1, 1);
+moveThroughCell(startRow, startColumn);
