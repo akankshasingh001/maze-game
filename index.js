@@ -48,12 +48,23 @@ const startColumn = Math.floor(Math.random() * cells);
 
 const moveThroughCell = (row, column) => {
   //if i have visited the cell at [row,column],then return
+  if (grid[row][column]) {
+    return;
+  }
   //Mark this cell as being visited
+  grid[row][column] = true;
   //Assemble randomly-ordered list of neighbour
+  const neighbours = [
+    [row - 1, column],
+    [row, column + 1],
+    [row + 1, column],
+    [row, column - 1]
+  ];
   //for each neighbours...
   //see if that neighbour is out of bound
   //If visited that neighbour,continue to next neighbour
   //Remove a wall from either verticals or horizontals
   //visit that next cell(means start through moveThroughCell function again)
 };
-moveThroughCell(row, column);
+moveThroughCell(startRow, startColumn);
+console.log(grid);
