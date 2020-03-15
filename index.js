@@ -112,3 +112,13 @@ const moveThroughCell = (row, column) => {
   }
 };
 moveThroughCell(startRow, startColumn);
+
+//iterarting over horizontal walls
+horizontals.forEach(row => {
+  row.forEach(open => {
+    if (open) {
+      return;
+    }
+    const wall = Bodies.rectangle();
+  });
+});
