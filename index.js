@@ -164,3 +164,7 @@ const goal = Bodies.rectangle(
 );
 
 World.add(world, goal);
+
+//Creating Ball
+const ball = Bodies.circle(unitLength / 2, unitLength / 2, unitLength / 4);
+World.add(world, ball);
