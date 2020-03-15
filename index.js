@@ -29,6 +29,21 @@ const walls = [
 World.add(world, walls);
 
 //Maze generation in grid by 2D array
+//function created for randomly shuffle the element of Array
+const shuffle = arr => {
+  let counter = arr.length;
+
+  while (counter > 0) {
+    const index = Math.floor(Math.random() * counter);
+    counter--;
+
+    //Swap here
+    let temp = arr[counter];
+    arr[counter] = arr[index];
+    arr[index] = temp;
+  }
+  return arr;
+};
 //Here outer Array is row & inner Array is column
 const grid = Array(cells)
   .fill(null)
@@ -54,17 +69,17 @@ const moveThroughCell = (row, column) => {
   //Mark this cell as being visited
   grid[row][column] = true;
   //Assemble randomly-ordered list of neighbour
-  const neighbours = [
+  const neighbours = shuffle([
     [row - 1, column],
     [row, column + 1],
     [row + 1, column],
     [row, column - 1]
-  ];
+  ]);
+
   //for each neighbours...
   //see if that neighbour is out of bound
   //If visited that neighbour,continue to next neighbour
   //Remove a wall from either verticals or horizontals
   //visit that next cell(means start through moveThroughCell function again)
 };
-moveThroughCell(startRow, startColumn);
-console.log(grid);
+moveThroughCell(1, 1);
