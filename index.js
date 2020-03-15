@@ -107,7 +107,8 @@ const moveThroughCell = (row, column) => {
         horizontals[row][column] = true;
         break;
     }
+    //visit that next cell(means start through moveThroughCell function again)
+    moveThroughCell(nextRow, nextCloumn);
   }
-  //visit that next cell(means start through moveThroughCell function again)
 };
 moveThroughCell(startRow, startColumn);
