@@ -1,29 +1,5 @@
-const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
-
-const width = window.innerWidth;
-const height = window.innerHeight;
-const cellsHorizontal = 4; // Number of columns
-const cellsVertical = 3; // Number of rows
-const unitLengthX = width / cellsHorizontal;
-const unitLengthY = height / cellsVertical;
-
-const engine = Engine.create();
-engine.world.gravity.y = 0; // for disable gravity of ball
-const { world } = engine;
-const render = Render.create({
-  element: document.body,
-  engine: engine,
-  options: {
-    wireframes: false,
-    width,
-    height
-  }
-});
-
-Render.run(render);
-Runner.run(Runner.create(), engine);
-
-//walls
+//above lines are in utils.js
+//walls generation
 const walls = [
   Bodies.rectangle(width / 2, 0, width, 2, { isStatic: true }),
   Bodies.rectangle(width / 2, height, width, 2, { isStatic: true }),
@@ -36,7 +12,6 @@ World.add(world, walls);
 //function created for randomly shuffle the element of Array
 const shuffle = arr => {
   let counter = arr.length;
-
   while (counter > 0) {
     const index = Math.floor(Math.random() * counter);
     counter--;
@@ -65,6 +40,7 @@ const horizontals = Array(cellsVertical - 1)
 const startRow = Math.floor(Math.random() * cellsVertical);
 const startColumn = Math.floor(Math.random() * cellsHorizontal);
 
+//function for generation of maze
 const moveThroughCell = (row, column) => {
   //if i have visited the cell at [row,column],then return
   if (grid[row][column]) {
@@ -173,7 +149,7 @@ const goal = Bodies.rectangle(
     label: 'goal',
     isStatic: true,
     render: {
-      fillStyle: 'green'
+      fillStyle: 'lightgreen'
     }
   }
 );
@@ -185,54 +161,13 @@ const ballRadius = Math.min(unitLengthX, unitLengthY) / 4;
 const ball = Bodies.circle(unitLengthX / 2, unitLengthY / 2, ballRadius, {
   label: 'ball',
   render: {
-    fillStyle: 'blue'
+    fillStyle: 'dodgerblue'
   }
 });
 World.add(world, ball);
 
 //Handling Keypress
-document.addEventListener('keydown', event => {
-  const { x, y } = ball.velocity;
-  switch (event.keyCode) {
-    //w or up arrow
-    case 87:
-    case 38:
-      Body.setVelocity(ball, { x, y: y - 5 });
-      break;
-    //d or right arrow
-    case 68:
-    case 39:
-      Body.setVelocity(ball, { x: x + 5, y });
-      break;
-    //s or down arrow
-    case 83:
-    case 40:
-      Body.setVelocity(ball, { x, y: y + 5 });
-      break;
-    //a or left arrow
-    case 65:
-    case 37:
-      Body.setVelocity(ball, { x: x - 5, y });
-      break;
-  }
-});
+//Handling keyPress is in handleKeyPress.js
+
 //Win condition
-Events.on(engine, 'collisionStart', event => {
-  event.pairs.forEach(collision => {
-    const labels = ['ball', 'goal'];
-    //condition for checking if ball collide to square box then we fall down all the
-    // maze walls and ball gravity will no longer to static
-    if (
-      labels.includes(collision.bodyA.label) &&
-      labels.includes(collision.bodyB.label)
-    ) {
-      document.querySelector('.winner').classList.remove('hidden');
-      world.gravity.y = 1;
-      world.bodies.forEach(body => {
-        if (body.label === 'wall') {
-          Body.setStatic(body, false); //ball gravity will no longer to static
-        }
-      });
-    }
-  });
-});
+//Win condition is in winner.js file
