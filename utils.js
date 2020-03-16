@@ -2,8 +2,8 @@ const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
 
 const width = window.innerWidth;
 const height = window.innerHeight;
-const cellsHorizontal = 4; // Number of columns
-const cellsVertical = 3; // Number of rows
+const cellsHorizontal = 5; // Number of columns
+const cellsVertical = 5; // Number of rows
 const unitLengthX = width / cellsHorizontal;
 const unitLengthY = height / cellsVertical;
 
@@ -19,6 +19,5 @@ const render = Render.create({
     height
   }
 });
-
 Render.run(render);
 Runner.run(Runner.create(), engine);
