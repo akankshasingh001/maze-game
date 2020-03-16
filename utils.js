@@ -3,9 +3,18 @@ const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
 const width = window.innerWidth;
 const height = window.innerHeight;
 
-let cellsHorizontal = 5; // Number of columns
-let cellsVertical = 5; // Number of rows
+let cellsHorizontal; // Number of columns
+let cellsVertical; // Number of rows
+const easyLevel = document.querySelector('#btnEasy').value;
 
+if (easyLevel === 'Easy') {
+  console.log(easyLevel);
+  cellsHorizontal = 10;
+  cellsVertical = 10;
+} else {
+  cellsHorizontal = 20;
+  cellsVertical = 20;
+}
 const unitLengthX = width / cellsHorizontal;
 const unitLengthY = height / cellsVertical;
 

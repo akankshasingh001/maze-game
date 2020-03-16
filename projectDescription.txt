@@ -1,0 +1,33 @@
+//Build a maze algorithm
+
+1. Create a grid of 'cells'
+2. Pick a random starting cell
+3. For that cell, build a randomly-ordered list of neighbours
+4. If a neighbour has been visited before,remove it from the list.
+5. For each remaining neighbour, 'move' to it and remove the wall between those two cells.
+6. Repeat for this new neighbour.(for step 3).
+
+//For grid generate:
+1. Create 2D array which has 3 columns and 3 rows.(have starting value false)
+array = [
+    [false,false,false],
+    [false,false,false],
+    [false,false,false]
+]
+
+//For Vertical generate:(have starting value false)
+1. Create 2D array which has 3 rows and 2 columns.
+array = [
+    [false,false],
+    [false,false],
+    [false,false]
+]
+
+//For Horizonatl generate:(have starting value false)
+1. Create 2D array which has 2 rows and 3 columns.
+array = [
+    [false,false,false],
+    [false,false,false]
+]
+//For color pick - https://cssgradient.io/
+//To know the keycode of keyboard- go to javascript keycodes(https://keycode.info/)
