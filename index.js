@@ -8,6 +8,8 @@ const walls = [
 ];
 World.add(world, walls);
 
+document.querySelector('canvas').classList.add('hidden');
+
 //Maze generation in grid by 2D array
 //function created for randomly shuffle the element of Array
 const shuffle = arr => {

@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="index.css" />
     <title>Maze Game</title>
   </head>
-  <body>
+  <body onload="gameStart(playingLevel)">
     <div>
       <button id="btnEasy" value="Easy">Easy</button>
       <button id="btnMedium" value="Medium">Medium</button>
@@ -25,6 +25,8 @@
         </button>
       </div>
     </div>
+
+    <script src="playingLevel.js"></script>
     <script src="utils.js"></script>
     <script src="index.js"></script>
     <script src="handleKeyPress.js"></script>
