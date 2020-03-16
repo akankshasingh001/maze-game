@@ -34,6 +34,8 @@ h1 {
   text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
   text-align: center;
   transition: all 0.15s;
+  position: fixed;
+  z-index: 2;
 }
 .buttonPlayAgain:hover {
   text-shadow: 0 0 2em rgba(255, 255, 255, 1);
