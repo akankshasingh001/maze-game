@@ -2,8 +2,10 @@ const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
 
 const width = window.innerWidth;
 const height = window.innerHeight;
-const cells = 6;
-const unitLength = width / cells;
+const cellsHorizontal = 4;
+const cellsVertical = 3;
+const unitLengthX = width / cellsHorizontal;
+const unitLengthY = height / cellsVertical;
 
 const engine = Engine.create();
 engine.world.gravity.y = 0; // for disable gravity of ball
