@@ -1,6 +1,9 @@
 body {
   margin: 0;
 }
+.gameLevel {
+  padding: 10vh 0 0 10vh;
+}
 .hidden {
   display: none !important;
 }
