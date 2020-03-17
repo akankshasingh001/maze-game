@@ -1,27 +1,3 @@
-const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
-
-const width = window.innerWidth;
-const height = window.innerHeight;
-
-document.querySelector('#btnEasy').addEventListener('click', () => {
-  disableGameLevel();
-  startGame(5, 5);
-});
-document.querySelector('#btnMedium').addEventListener('click', () => {
-  disableGameLevel();
-  startGame(10, 10);
-});
-document.querySelector('#btnHard').addEventListener('click', () => {
-  disableGameLevel();
-  startGame(20, 20);
-});
-
-disableGameLevel = () => {
-  document.querySelector('.gameLevel').classList.add('hidden');
-};
-// document.querySelector('.startGame').addEventListener('click', () => {
-//   startGame(3, 4);
-// });
 startGame = (cellsHorizontal, cellsVertical) => {
   const unitLengthX = width / cellsHorizontal;
   const unitLengthY = height / cellsVertical;
@@ -40,6 +16,7 @@ startGame = (cellsHorizontal, cellsVertical) => {
 
   Render.run(render);
   Runner.run(Runner.create(), engine);
+
   //walls
   const walls = [
     Bodies.rectangle(width / 2, 0, width, 2, {
@@ -60,6 +37,7 @@ startGame = (cellsHorizontal, cellsVertical) => {
   //Picking random starting cells
   const startRow = Math.floor(Math.random() * cellsVertical);
   const startColumn = Math.floor(Math.random() * cellsHorizontal);
+
   //Here outer Array is row & inner Array is column
   const grid = Array(cellsVertical)
     .fill(null)
@@ -72,6 +50,8 @@ startGame = (cellsHorizontal, cellsVertical) => {
   const horizontals = Array(cellsVertical - 1)
     .fill(null)
     .map(() => Array(cellsHorizontal).fill(false));
+
+  //Maze generation in grid by 2D array
   const moveThroughCell = (row, column) => {
     //if i have visited the cell at [row,column],then return
     if (grid[row][column]) {
@@ -201,6 +181,7 @@ startGame = (cellsHorizontal, cellsVertical) => {
   });
   World.add(world, ball);
 
+  //Win condition
   Events.on(engine, 'collisionStart', event => {
     event.pairs.forEach(collision => {
       const labels = ['ball', 'goal'];
@@ -220,6 +201,7 @@ startGame = (cellsHorizontal, cellsVertical) => {
       }
     });
   });
+
   //Handling Keypress
   document.addEventListener('keydown', event => {
     const { x, y } = ball.velocity;
@@ -248,7 +230,6 @@ startGame = (cellsHorizontal, cellsVertical) => {
   });
 };
 
-//Maze generation in grid by 2D array
 //function created for randomly shuffle the element of Array
 const shuffle = arr => {
   let counter = arr.length;
@@ -264,7 +245,3 @@ const shuffle = arr => {
   }
   return arr;
 };
-
-//moveThroughCell(startRow, startColumn);
-
-//Win condition
