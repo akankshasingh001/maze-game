@@ -17,6 +17,32 @@ h1 {
   height: 100vh;
   width: 100vw;
 }
+
+.buttonPlayAgain {
+  background-color: #42cc8c;
+  display: inline-block;
+  padding: 0.46em 1.6em;
+  border: 0.1em solid #000000;
+  margin: 0 0.2em 0.2em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #000000;
+  font-size: 36px;
+  text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+  text-align: center;
+  transition: all 0.15s;
+  position: fixed;
+  z-index: 2;
+}
+.buttonPlayAgain:hover {
+  text-shadow: 0 0 2em rgba(255, 255, 255, 1);
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
 .btnLevel {
   border-radius: 4px;
   background: linear-gradient(to right, #67b26b, #4ca2cb) !important;

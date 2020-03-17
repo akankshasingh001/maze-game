@@ -3,7 +3,7 @@
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.min.js"></script>
     <link rel="stylesheet" href="index.css" />
-    <title>Maze Project</title>
+    <title>Maze Game</title>
   </head>
   <body>
     <div class="gameLevel">
@@ -14,7 +14,18 @@
     </div>
     <!-- <button class="startGame">Start Game</button> -->
     <div class="winner hidden">
-      <h1>You Win!!!</h1>
+      <div>
+        <h1>You Win!!!</h1>
+      </div>
+      <div>
+        <button
+          id="playAgain"
+          class="buttonPlayAgain"
+          onclick="location.reload();"
+        >
+          Play Again!!!
+        </button>
+      </div>
     </div>
     <script src="index.js"></script>
   </body>

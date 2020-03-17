@@ -139,7 +139,7 @@ startGame = (cellsHorizontal, cellsVertical) => {
           label: 'wall',
           isStatic: true,
           render: {
-            fillStyle: 'red'
+            fillStyle: '#22c1c3'
           }
         }
       );
@@ -162,7 +162,7 @@ startGame = (cellsHorizontal, cellsVertical) => {
           label: 'wall',
           isStatic: true,
           render: {
-            fillStyle: 'red'
+            fillStyle: '#22c1c3'
           }
         }
       );
@@ -180,7 +180,9 @@ startGame = (cellsHorizontal, cellsVertical) => {
       label: 'goal',
       isStatic: true,
       render: {
-        fillStyle: 'green'
+        fillStyle: '#fdbb2d',
+        strokeStyle: '#b5b4b1',
+        lineWidth: 5
       }
     }
   );
@@ -192,7 +194,9 @@ startGame = (cellsHorizontal, cellsVertical) => {
   const ball = Bodies.circle(unitLengthX / 2, unitLengthY / 2, ballRadius, {
     label: 'ball',
     render: {
-      fillStyle: 'blue'
+      fillStyle: '#fc466b',
+      strokeStyle: '#b5b4b1',
+      lineWidth: 5
     }
   });
   World.add(world, ball);
