@@ -5,12 +5,14 @@
     <link rel="stylesheet" href="index.css" />
     <title>Maze Game</title>
   </head>
-  <body onload="gameStart(playingLevel)">
-    <div>
-      <button id="btnEasy" value="Easy">Easy</button>
-      <button id="btnMedium" value="Medium">Medium</button>
-      <button id="btnHard" value="Hard">Hard</button>
+  <body>
+    <div class="gameLevel">
+      <h2>Select Level & Play Maze Game</h2>
+      <button id="btnEasy" class="btnLevel" value="Easy">Easy</button>
+      <button id="btnMedium" class="btnLevel" value="Medium">Medium</button>
+      <button id="btnHard" class="btnLevel" value="Hard">Hard</button>
     </div>
+    <!-- <button class="startGame">Start Game</button> -->
     <div class="winner hidden">
       <div>
         <h1>You Win!!!</h1>
@@ -25,11 +27,7 @@
         </button>
       </div>
     </div>
-
-    <script src="playingLevel.js"></script>
     <script src="utils.js"></script>
     <script src="index.js"></script>
-    <script src="handleKeyPress.js"></script>
-    <script src="winner.js"></script>
   </body>
 </html>
