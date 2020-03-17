@@ -1,4 +1,14 @@
-const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
+const {
+  Engine,
+  Render,
+  Runner,
+  World,
+  Bodies,
+  Body,
+  Events,
+  MouseConstraint,
+  Mouse
+} = Matter;
 
 const width = window.innerWidth;
 const height = window.innerHeight;

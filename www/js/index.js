@@ -202,6 +202,14 @@ startGame = (cellsHorizontal, cellsVertical) => {
     });
   });
 
+  //clicking and dropping the shape
+  World.add(
+    world,
+    MouseConstraint.create(engine, {
+      mouse: Mouse.create(render.canvas)
+    })
+  );
+
   //Handling Keypress
   document.addEventListener('keydown', event => {
     const { x, y } = ball.velocity;
