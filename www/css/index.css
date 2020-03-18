@@ -1,6 +1,20 @@
 body {
   margin: 0;
 }
+.keys {
+  width: 100px;
+  height: 100px;
+  float: left;
+  border: 1px solid blue;
+  margin: 2px;
+  text-align: center;
+  line-height: 100px;
+  cursor: pointer;
+}
+
+.keys:hover {
+  background: grey;
+}
 .gameLevel {
   padding: 10vh 0 0 10vh;
 }

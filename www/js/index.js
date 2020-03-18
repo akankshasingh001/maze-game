@@ -202,13 +202,60 @@ startGame = (cellsHorizontal, cellsVertical) => {
     });
   });
 
-  // //clicking and dropping the shape
-  // World.add(
-  //   world,
-  //   MouseConstraint.create(engine, {
-  //     mouse: Mouse.create(render.canvas)
-  //   })
-  // );
+  //Handling touch
+
+  const { x, y } = ball.velocity;
+  function upTrue() {
+    Body.setVelocity(ball, { x, y: y - 5 });
+  }
+  function upFalse() {
+    Body.setVelocity(ball, { x, y: y - 3 });
+  }
+  function downTrue() {
+    Body.setVelocity(ball, { x, y: y + 5 });
+  }
+  function downFalse() {
+    Body.setVelocity(ball, { x, y: y + 3 });
+  }
+  function leftTrue() {
+    Body.setVelocity(ball, { x: x - 5, y });
+  }
+  function leftFalse() {
+    Body.setVelocity(ball, { x: x - 3, y });
+  }
+  function rightTrue() {
+    Body.setVelocity(ball, { x: x + 5, y });
+  }
+  function rightFalse() {
+    Body.setVelocity(ball, { x: x + 3, y });
+  }
+  //up
+  let upKey = document.getElementById('up');
+  upKey.addEventListener('mousedown', upTrue);
+  upKey.addEventListener('touchstart', upTrue);
+  upKey.addEventListener('mouseup', upFalse);
+  upKey.addEventListener('touchend', upFalse);
+
+  //down
+  let downKey = document.getElementById('down');
+  downKey.addEventListener('mousedown', downTrue);
+  downKey.addEventListener('touchstart', downTrue);
+  downKey.addEventListener('mouseup', downFalse);
+  downKey.addEventListener('touchend', downFalse);
+
+  //left
+  let leftKey = document.getElementById('left');
+  leftKey.addEventListener('mousedown', leftTrue);
+  leftKey.addEventListener('touchstart', leftTrue);
+  leftKey.addEventListener('mouseup', leftFalse);
+  leftKey.addEventListener('touchend', leftFalse);
+
+  //right
+  let rightKey = document.getElementById('right');
+  rightKey.addEventListener('mousedown', rightTrue);
+  rightKey.addEventListener('touchstart', rightTrue);
+  rightKey.addEventListener('mouseup', rightFalse);
+  rightKey.addEventListener('touchend', rightFalse);
 
   //Handling Keypress
   document.addEventListener('keydown', event => {

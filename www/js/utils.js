@@ -11,11 +11,11 @@ const {
 } = Matter;
 
 const width = window.innerWidth;
-const height = window.innerHeight;
+const height = window.innerHeight * 0.9;
 
 document.querySelector('#btnEasy').addEventListener('click', () => {
   disableGameLevel();
-  startGame(5, 5);
+  startGame(8, 8);
 });
 document.querySelector('#btnMedium').addEventListener('click', () => {
   disableGameLevel();
@@ -23,7 +23,7 @@ document.querySelector('#btnMedium').addEventListener('click', () => {
 });
 document.querySelector('#btnHard').addEventListener('click', () => {
   disableGameLevel();
-  startGame(20, 20);
+  startGame(16, 16);
 });
 
 disableGameLevel = () => {
