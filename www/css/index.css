@@ -1,20 +1,18 @@
 body {
   margin: 0;
 }
-.keys {
-  width: 100px;
-  height: 100px;
-  float: left;
-  border: 1px solid blue;
-  margin: 2px;
-  text-align: center;
-  line-height: 100px;
-  cursor: pointer;
+.arrowButton {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 90vh;
+  left: 40vw;
 }
 
-.keys:hover {
-  background: grey;
+i.icon {
+  font-size: 50px;
 }
+
 .gameLevel {
   padding: 10vh 0 0 10vh;
 }

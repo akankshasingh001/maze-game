@@ -11,7 +11,7 @@ const {
 } = Matter;
 
 const width = window.innerWidth;
-const height = window.innerHeight * 0.9;
+const height = window.innerHeight * 0.88;
 
 document.querySelector('#btnEasy').addEventListener('click', () => {
   disableGameLevel();
@@ -28,4 +28,5 @@ document.querySelector('#btnHard').addEventListener('click', () => {
 
 disableGameLevel = () => {
   document.querySelector('.gameLevel').classList.add('hidden');
+  document.querySelector('.arrowButton').classList.remove('hidden');
 };

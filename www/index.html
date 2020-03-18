@@ -2,6 +2,10 @@
 <html lang="en">
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
     <link rel="stylesheet" href="css/index.css" />
     <title>Maze Game</title>
   </head>
@@ -15,12 +19,6 @@
         <h3>Created By: Akanksha Singh</h3>
       </div>
     </div>
-    <div class="arrowButton">
-      <div class="keys" id="down">Down</div>
-      <div class="keys" id="up">Up</div>
-      <div class="keys" id="left">Left</div>
-      <div class="keys" id="right">Right</div>
-    </div>
     <div class="winner hidden">
       <div>
         <h1>You Win!!!</h1>
@@ -33,6 +31,27 @@
         >
           Play Again!!!
         </button>
+      </div>
+    </div>
+
+    <div class="arrowButton hidden">
+      <div class="left">
+        <div id="left">
+          <i class="arrow alternate circle left icon"></i>
+        </div>
+      </div>
+      <div class="updown">
+        <div id="down">
+          <i class="arrow alternate circle down icon"></i>
+        </div>
+        <div id="up">
+          <i class="arrow alternate circle up icon"></i>
+        </div>
+      </div>
+      <div class="right">
+        <div id="right">
+          <i class="arrow alternate circle right icon"></i>
+        </div>
       </div>
     </div>
     <script src="js/utils.js"></script>

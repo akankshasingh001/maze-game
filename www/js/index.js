@@ -192,6 +192,7 @@ startGame = (cellsHorizontal, cellsVertical) => {
         labels.includes(collision.bodyB.label)
       ) {
         document.querySelector('.winner').classList.remove('hidden');
+        document.querySelector('.arrowButton').classList.add('hidden');
         world.gravity.y = 1;
         world.bodies.forEach(body => {
           if (body.label === 'wall') {
