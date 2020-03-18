@@ -11,7 +11,7 @@ const {
 } = Matter;
 
 const width = window.innerWidth;
-const height = window.innerHeight * 0.88;
+const height = window.innerHeight * 0.86;
 
 document.querySelector('#btnEasy').addEventListener('click', () => {
   disableGameLevel();

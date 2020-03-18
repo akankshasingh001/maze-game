@@ -4,9 +4,12 @@ body {
 .arrowButton {
   display: flex;
   align-items: center;
-  position: fixed;
-  top: 90vh;
+  bottom: 0vh;
   left: 40vw;
+  position: fixed;
+}
+canvas {
+  position: fixed;
 }
 
 i.icon {
